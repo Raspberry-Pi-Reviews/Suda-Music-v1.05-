@@ -1,0 +1,35 @@
+#!/bin/bash
+
+error() {
+echo -e "\e[0;31mError: $1\e[0m"
+}
+
+cd $HOME
+git clone https://github.com/Raspberry-Pi-Reviews/Suda-Music(v1.05)
+cd $HOME/Suda-Music
+chmod +x musicplayer.py
+echo "[Desktop Entry]
+Name=Suda Music
+Comment= Suda Music is a free to use music player.
+Exec=python3 /home/pi/Suda-Music(v1.05)/mp.py
+Icon=/home/pi/Suda-Music(v1.05)/Images/music.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Audio;Music;Player;AudioVideo;" | tee ~/.local/share/applications/Suda-Music(v1.05).desktop || error "Failed to create menu button!"
+
+echo "#!/bin/bash
+
+if [ ! command -v python &>/dev/null ] && [ ! command -v python2 &>/dev/null ] && [ ! command -v python3 &>/dev/n>
+read -t 30 -p 'Python is required to run Suda Music, but is not installed! Would you like to install it? Timeout >
+if [ "$?" == "142" ]; then
+echo -e '\e[0;31mInput timed out... Exiting.'; exit 1
+else
+case $input in
+        y|Y|Yes|YES|yes|"") sudo apt install python3 ;;
+        n|N|No|NO|no) echo -e "\e[0;31m\nUser error: user chose not to install Python!\e[0m Exiting..."; exit 1 ;;
+esac
+fi
+fi
+
+python $HOME/Suda-Music(v1.05)/mp.py" &>/dev/null | sudo tee /usr/local/bin/suda-music(v1.05) || error 'Failed to create '\''suda-music'\'' command!'
