@@ -11,8 +11,8 @@ chmod +x musicplayer.py
 echo "[Desktop Entry]
 Name=Suda Music
 Comment= Suda Music is a free to use music player.
-Exec=python3 /home/pi/Suda-Music(v1.05)/mp.py
-Icon=/home/pi/Suda-Music(v1.05)/Images/music.png
+Exec=python3 /home/pi/Suda-Music-v1.05-/mp.py
+Icon=/home/pi/Suda-Music-v1.05-/Images/music.png
 Terminal=false
 StartupNotify=true
 Type=Application
@@ -32,4 +32,4 @@ esac
 fi
 fi
 
-python $HOME/Suda-Music(v1.05)/mp.py" &>/dev/null | sudo tee /usr/local/bin/suda-music(v1.05) || error 'Failed to create '\''suda-music'\'' command!'
+python $HOME/Suda-Music-v1.05-/mp.py" &>/dev/null | sudo tee /usr/local/bin/suda-music(v1.05) || error 'Failed to create '\''suda-music'\'' command!'
